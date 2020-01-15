@@ -1,11 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useState} from 'react';
+import styled, {createGlobalStyle} from 'styled-components';
 import Header from './components/header';
 import Footer from './components/footer';
 import Body from './components/body';
 import Row from './components/row';
 import {Item, Menu} from './components/menu';
-import {createGlobalStyle} from 'styled-components';
 
 const MainWrap = styled.div`
   display: flex;
@@ -15,13 +14,15 @@ const MainWrap = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    color: ${props => (props.dark ? 'white' : 'black')};
+    color: ${({isDark}) => (isDark ? 'white' : 'black')};
+    background-color: ${({isDark}) => (isDark ? 'grey' : 'white')};
     margin: 0;
     font-family: sans-serif;
   }
 `;
 
 const App = () => {
+  const [isDark, toggleIsDark] = useState();
 
   return (
     <MainWrap>
@@ -30,7 +31,7 @@ const App = () => {
       <Header />
       <Row>
         <Body />
-        <Menu>
+        <Menu onChangeDark={() => {console.log('test');}}>
           <Item>Item 1</Item>
           <Item>Item 2</Item>
           <Item>Item 3</Item>

@@ -21,9 +21,11 @@ const Menu = (props) => {
 
   return (
     <Nav>
-      <Ul>
-        {children}
-      </Ul>
+      <div>
+        <Ul>
+          {children}
+        </Ul>
+      </div>
     </Nav>
   );
 };
