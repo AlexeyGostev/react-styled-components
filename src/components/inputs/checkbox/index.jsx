@@ -41,7 +41,7 @@ const InputToggleDark = styled.input`
   }
   
   &:focus + ${CircleElement} {
-    box-shadow: 0 0 2px 2px rgba(255,255,255,0.65);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.65);
   }
 
   &:checked + ${CircleElement} {
