@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import Checkbox from '../inputs/checkbox';
 
 const HeaderElement = styled.header`
   background-color: #20232A;
@@ -11,6 +12,14 @@ const HeaderElement = styled.header`
   top: 0;
   left: 0;
   right: 0;
+  display: flex;
+  align-content: center;
+`;
+
+const WrapToggle = styled.div`
+  position: absolute;
+  right: 10px;
+  margin-right: 40px;
 `;
 
 const Header = () => {
@@ -18,6 +27,10 @@ const Header = () => {
   return (
     <HeaderElement>
       Styled Components example
+
+      <WrapToggle>
+        <Checkbox>Toggle dark mode</Checkbox>
+      </WrapToggle>
     </HeaderElement>
   );
 };
