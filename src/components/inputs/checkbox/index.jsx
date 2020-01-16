@@ -54,12 +54,12 @@ const InputToggleDark = styled.input`
 `;
 
 const Checkbox = (props) => {
-  const {children} = props;
+  const {children, onChange} = props;
 
   return (
     <Label htmlFor="darkToggle">
       <Text>{children}</Text>
-      <InputToggleDark id="darkToggle" type="checkbox" />
+      <InputToggleDark id="darkToggle" type="checkbox" onChange={onChange}/>
       <CircleElement />
     </Label>
   );

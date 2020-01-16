@@ -9,7 +9,7 @@ import {Item, Menu} from './components/menu';
 const MainWrap = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;  
+  height: 100vh;
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -22,16 +22,16 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  const [isDark, toggleIsDark] = useState();
+  const [isDark, toggleIsDark] = useState(false);
 
   return (
     <MainWrap>
-      <GlobalStyle />
+      <GlobalStyle isDark={isDark}/>
 
-      <Header />
+      <Header onChangeDark={() => {toggleIsDark(!isDark)}}/>
       <Row>
         <Body />
-        <Menu onChangeDark={() => {console.log('test');}}>
+        <Menu>
           <Item>Item 1</Item>
           <Item>Item 2</Item>
           <Item>Item 3</Item>

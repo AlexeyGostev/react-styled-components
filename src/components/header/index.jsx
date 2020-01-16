@@ -22,14 +22,15 @@ const WrapToggle = styled.div`
   margin-right: 40px;
 `;
 
-const Header = () => {
+const Header = (props) => {
+  const { onChangeDark } = props;
 
   return (
     <HeaderElement>
       Styled Components example
 
       <WrapToggle>
-        <Checkbox>Toggle dark mode</Checkbox>
+        <Checkbox onChange={onChangeDark}>Toggle dark mode</Checkbox>
       </WrapToggle>
     </HeaderElement>
   );
